@@ -90,7 +90,7 @@ void EnterForceWake()
     int forceWakeAck;
     do {
         ++trys;
-        forceWakeAck = GfxRead32(&s_gfxDevice.pci, FORCE_WAKE_MT_ACK);
+        forceWakeAck = GfxRead32(&s_gfxDevice.pci, FORCE_WAKE_ACK_HSW);
         ConsolePrint("Waiting for Force Ack to Clear: Try=%d - Ack=0x%X\n", trys, forceWakeAck);
     } while (forceWakeAck != 0);
 
@@ -102,7 +102,7 @@ void EnterForceWake()
     RlogPrint("Wake written...\n");
     do {
         ++trys;
-        forceWakeAck = GfxRead32(&s_gfxDevice.pci, FORCE_WAKE_MT_ACK);
+        forceWakeAck = GfxRead32(&s_gfxDevice.pci, FORCE_WAKE_ACK_HSW);
         ConsolePrint("Waiting for Force Ack to be Set: Try=%d - Ack=0x%X\n", trys, forceWakeAck);
     } while (forceWakeAck == 0);
 

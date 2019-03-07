@@ -2374,6 +2374,7 @@ typedef struct OpRegionMailbox3ASLE
 #define FORCE_WAKE_MT                   0xA188 
 #define FORCE_WAKE                      0xA18C 
 #define FORCE_WAKE_MT_ACK               0x130040 
+#define FORCE_WAKE_ACK_HSW              0x130044
 #define FORCE_WAKE_ACK                  0x130090 
 
 // ------------------------------------------------------------------------------------------------

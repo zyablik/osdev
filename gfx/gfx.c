@@ -212,8 +212,8 @@ void GfxInit(uint id, PciDeviceInfo *info)
         return;
     }
 
-    if ((info->vendorId != VENDOR_INTEL) ||
-        (info->deviceId != DEVICE_HD3000))
+    if ((info->vendorId != VENDOR_INTEL) /*||
+        (info->deviceId != DEVICE_HD3000)*/)
     {
         ConsolePrint("Graphics Controller not recognised!\n");
         return;
@@ -772,7 +772,7 @@ void GfxStart()
     
     if (!ValidateChipset())
     {
-        return;
+//        return;
     }
 
     GfxInitPci(&s_gfxDevice.pci);

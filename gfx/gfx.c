@@ -779,7 +779,7 @@ void GfxStart()
     // Need to force out of D6 state before we can read/write to registers
     EnterForceWake();
     {
-        GfxMemEnableSwizzle(&s_gfxDevice.pci);
+//        GfxMemEnableSwizzle(&s_gfxDevice.pci);
     }
     ExitForceWake();
 

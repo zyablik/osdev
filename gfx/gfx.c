@@ -363,7 +363,12 @@ static void CreateStates(GfxDevice *device)
     surfaceState->height = SCREEN_HEIGHT - 1;
     surfaceState->pitchDepth =
         (SCREEN_WIDTH * sizeof(u32) - 1) << SURFACE_PITCH_SHIFT;
-    surfaceState->flags4 = 0;
+    surfaceState->pitchDepth = (SCREEN_WIDTH * sizeof(u32) - 1) << SURFACE_PITCH_SHIFT;
+    surfaceState->flags4 =
+          HSW_SURFACE_SWIZZLE_RED   << HSW_SURFACE_SHADER_CHANNEL_SELECT_R_SHIFT
+        | HSW_SURFACE_SWIZZLE_GREEN << HSW_SURFACE_SHADER_CHANNEL_SELECT_G_SHIFT
+        | HSW_SURFACE_SWIZZLE_BLUE  << HSW_SURFACE_SHADER_CHANNEL_SELECT_B_SHIFT
+        | HSW_SURFACE_SWIZZLE_ALPHA << HSW_SURFACE_SHADER_CHANNEL_SELECT_A_SHIFT;
 }
 
 // ------------------------------------------------------------------------------------------------

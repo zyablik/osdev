@@ -40,10 +40,10 @@ void SmpInit()
     }
 
     // Wait for all cpus to be active
-    PitWait(1);
-    while (g_activeCpuCount != g_acpiCpuCount)
+    PitWait(100);
+//    while (g_activeCpuCount != g_acpiCpuCount)
     {
-        ConsolePrint("Waiting... %d\n", g_activeCpuCount);
+        ConsolePrint("Waiting... g_activeCpuCount = %d g_acpiCpuCount = %d\n", g_activeCpuCount, g_acpiCpuCount);
         PitWait(1);
     }
 

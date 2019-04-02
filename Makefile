@@ -17,14 +17,15 @@ COMMON_CFLAGS := -I . -std=c99
 COMMON_CFLAGS += -Wall -Werror-implicit-function-declaration -Werror -Wno-array-bounds
 COMMON_CFLAGS += -fno-common -fno-asynchronous-unwind-tables
 COMMON_CFLAGS += -mno-red-zone
+COMMON_CFLAGS += -fno-stack-protector
 COMMON_CFLAGS += -O2
 
 FREESTANDING_CFLAGS := -fno-builtin
 
 # Cross Compiler
-CROSS_CC := x86_64-elf-gcc
+CROSS_CC := gcc-4.8
 CROSS_CFLAGS := -DCROSS $(FREESTANDING_CFLAGS) $(COMMON_CFLAGS)
-CROSS_LD := x86_64-elf-ld
+CROSS_LD := ld
 
 # Host Compiler without standard library
 HOST_CFLAGS := -DHOST $(FREESTANDING_CFLAGS) $(COMMON_CFLAGS)

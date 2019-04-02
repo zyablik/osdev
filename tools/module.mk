@@ -12,7 +12,7 @@ TARGETS += \
 
 WS2_32 :=
 
-ifeq ($(UNAME), Darwin)
+ifeq ($(UNAME), $(filter $(UNAME), Darwin Linux))
 else
 TARGETS += \
 	tools/read_boot.exe \

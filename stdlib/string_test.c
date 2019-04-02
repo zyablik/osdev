@@ -15,7 +15,7 @@ int main(int argc, const char **argv)
     }
 
     // memset
-    ASSERT_EQ_PTR(memset(buf, 1, 0), buf);
+    ASSERT_EQ_PTR(memset(buf, 0, 1), buf);
     ASSERT_EQ_UINT(buf[0], 0);
 
     ASSERT_EQ_PTR(memset(buf, 1, 3), buf);

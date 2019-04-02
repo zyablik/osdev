@@ -2,6 +2,9 @@
 // stdlib/format_test.c
 // ------------------------------------------------------------------------------------------------
 
+#pragma GCC diagnostic ignored "-Wformat-security"
+#pragma GCC diagnostic ignored "-Wformat-truncation"
+
 #include "test/test.h"
 #include "stdlib/format.h"
 #include <string.h>
@@ -70,7 +73,7 @@ static void TestPrint()
     ASSERT_EQ_STR(buf, "ABCD3141");
 
     // 'llx'
-    ASSERT_EQ_UINT(snprintf(buf, sizeof(buf), "%llx", 0x123456789abcdefu), 15);
+    ASSERT_EQ_UINT(snprintf(buf, sizeof(buf), "%llx", 0x123456789abcdefuLL), 15);
     ASSERT_EQ_STR(buf, "123456789abcdef");
 
     // 'p'
